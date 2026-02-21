@@ -3,33 +3,32 @@ window.onload = function() {
 
     const data = [
         {
-            comunidad: "Aragón",
+            comunidad: "Toledo",
             provincias: [
                 {
-                    nombre: "Zaragoza",
-                    habitantes: 673010,
+                    nombre: "Toledo",
+                    habitantes: 88.356,
                     records: [
-                        { name: "Acheron", player: "Player1", percentage: "100%", videoUrl: "#" },
-                        { name: "Bloodlust", player: "Player2", percentage: "100%", videoUrl: "#" }
+                        { name: "Blade Of Justice", player: "AzaxxGD", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=naWcVb1VqlA&t=320s" },
                     ]
                 },
                 {
                     nombre: "Huesca",
                     habitantes: 52469,
                     records: [
-                        { name: "Call Me Maybe", player: "Xenoncito", percentage: "100%", videoUrl: "#" }
+                        { name: "Call Me Maybe", player: "Xenoncito", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=X3RyySRwo_I&t=11s" }
                     ]
                 }
             ]
         },
         {
-            comunidad: "Madrid",
+            comunidad: "Santa Cruz De Tenerife",
             provincias: [
                 {
                     nombre: "Madrid",
                     habitantes: 3305408,
                     records: [
-                        { name: "Kenos", player: "MadPlayer", percentage: "100%", videoUrl: "#" }
+                        { name: "Gravity", player: "1rr3v3rs1bl3", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=f0wPjcV4mek" }
                     ]
                 }
             ]
