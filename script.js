@@ -3,11 +3,10 @@ const data = [
         comunidad: "Aragón",
         provincias: [
             {
-                nombre: "Zaragoza",
-                habitantes: 673010, // Ordenaremos por este número
+                nombre: "Santa Cruz De Tenerife",
+                habitantes: 211.436, // Ordenaremos por este número
                 records: [
-                    { name: "Acheron", player: "Player1", percentage: "100%", videoUrl: "#" },
-                    { name: "Bloodlust", player: "Player2", percentage: "100%", videoUrl: "#" }
+                    { name: "Gravity", player: "1rr3v3rs1bl3", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=f0wPjcV4mek" },
                 ]
             },
             {
@@ -20,13 +19,13 @@ const data = [
         ]
     },
     {
-        comunidad: "Madrid",
+        comunidad: "Toledo",
         provincias: [
             {
-                nombre: "Madrid",
-                habitantes: 3305408,
+                nombre: "Toledo",
+                habitantes: 88.356,
                 records: [
-                    { name: "Kenos", player: "Player3", percentage: "100%", videoUrl: "#" }
+                    { name: "Blade Of Justice", player: "AzaxxGD", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=naWcVb1VqlA&t=320s" }
                 ]
             }
         ]
