@@ -1,87 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
+
 :root {
-    --bg-color: #05070a;
-    --card-bg: rgba(15, 20, 30, 0.9);
-    --accent-color: #00fbff;
-    --gold-color: #ffcc00;
-    --text-color: #ffffff;
+    --bg-dark: #050510;
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc13fe;
+    --gold: #ffd700;
+    --glass: rgba(255, 255, 255, 0.05);
 }
 
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                url('https://wallpaperaccess.com/full/3565573.png');
-    background-size: cover;
-    background-attachment: fixed;
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
     margin: 0;
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+/* Efecto de fondo de estrellas/espacio */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://assets.codepen.io/13471/sparkles.gif'); /* Efecto estrellas sutil */
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
     text-align: center;
+    padding: 60px 20px;
 }
 
-/* Títulos de Comunidades */
-.comunidad-titulo {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-top: 60px;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    padding: 0 20px 10px;
-    text-shadow: 0 0 15px rgba(0, 251, 255, 0.4);
-}
-
-/* Títulos de Provincias */
-.provincia-titulo {
-    font-size: 1.5rem;
-    opacity: 0.8;
-    margin-top: 30px;
-    margin-bottom: 15px;
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+    margin-bottom: 10px;
 }
 
 #list-container {
-    width: 90%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    padding: 0 20px;
 }
 
+/* Títulos de Comunidad */
+.neon-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--neon-purple);
+    text-shadow: 0 0 15px var(--neon-purple);
+    text-align: center;
+    margin-top: 80px;
+    border-bottom: 2px solid var(--neon-purple);
+    padding-bottom: 10px;
+}
+
+/* Títulos de Provincia */
+.provincia-title {
+    color: var(--neon-blue);
+    margin-top: 40px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 4px solid var(--neon-blue);
+    padding-left: 15px;
+}
+
+/* Tarjetas Generales */
 .level-card {
-    background: var(--card-bg);
-    border-radius: 8px;
-    padding: 15px 25px;
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 4px solid #333;
+    backdrop-filter: blur(5px);
     transition: 0.3s;
 }
 
-/* EL DORADO PARA EL MEJOR DE CADA PROVINCIA */
-.top-one {
-    border-left: 6px solid var(--gold-color) !important;
-    background: linear-gradient(90deg, rgba(255, 204, 0, 0.1), var(--card-bg));
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+.level-card:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.top-one .level-info h3 {
-    color: var(--gold-color);
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.level-info h3 { margin: 0; font-size: 1.3rem; text-align: left; }
-.level-info p { margin: 5px 0 0; opacity: 0.7; text-align: left; }
+.info-box h4 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-family: 'Orbitron', sans-serif;
+}
 
-.btn-video {
-    color: var(--text-color);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 8px 15px;
+.info-box p {
+    margin: 5px 0 0;
+    color: #ccc;
+}
+
+/* --- EL REY: TARJETA DORADA (TOP 1) --- */
+.gold-card {
+    border: 2px solid var(--gold);
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.05), transparent);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.gold-card .rank-box {
+    font-size: 2rem;
+}
+
+.gold-card h4 {
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Botones */
+.btn-neon {
     text-decoration: none;
-    border-radius: 5px;
+    color: var(--neon-blue);
+    border: 1px solid var(--neon-blue);
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.8rem;
     transition: 0.3s;
+    text-transform: uppercase;
 }
 
-.btn-video:hover {
-    background: var(--text-color);
+.btn-neon:hover {
+    background: var(--neon-blue);
     color: #000;
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.gold-card .btn-neon {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.gold-card .btn-neon:hover {
+    background: var(--gold);
+    color: #000;
+    box-shadow: 0 0 20px var(--gold);
 }
