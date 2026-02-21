@@ -1,0 +1,82 @@
+:root {
+    --bg-color: #0b0e14;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --accent-color: #00d4ff;
+    --text-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--accent-color);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+#list-container {
+    width: 90%;
+    max-width: 800px;
+    display: grid;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.level-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.level-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.level-info p {
+    margin: 5px 0 0;
+    opacity: 0.7;
+}
+
+.btn-video {
+    background: var(--accent-color);
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.btn-video:hover {
+    filter: brightness(1.2);
+}
