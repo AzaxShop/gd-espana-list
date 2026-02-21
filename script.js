@@ -6,7 +6,7 @@ window.onload = function() {
             comunidad: "Aragón",
             provincias: [
                 {
-                    nombre: "Zaragoza",
+                    nombre: "Huesca",
                     habitantes: 673010,
                     records: [
                         { name: "Call Me Maybe", player: "Xenoncito", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=X3RyySRwo_I&t=11s" }
