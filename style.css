@@ -1,157 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
-
 :root {
-    --bg-dark: #050510;
-    --neon-blue: #00f3ff;
-    --neon-purple: #bc13fe;
-    --gold: #ffd700;
+    --bg: #0a0a0c;
+    --accent: #00f3ff;
+    --purple: #bc13fe;
     --glass: rgba(255, 255, 255, 0.05);
 }
 
 body {
-    background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+    background-color: var(--bg);
+    background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%);
     color: white;
     font-family: 'Rajdhani', sans-serif;
     margin: 0;
-    padding-bottom: 50px;
-    min-height: 100vh;
 }
 
-/* Efecto de fondo de estrellas/espacio */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url('https://assets.codepen.io/13471/sparkles.gif'); /* Efecto estrellas sutil */
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: -1;
-}
-
-header {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
-    margin-bottom: 10px;
-}
-
-#list-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Títulos de Comunidad */
-.neon-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.8rem;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--neon-purple);
-    text-shadow: 0 0 15px var(--neon-purple);
-    text-align: center;
-    margin-top: 80px;
-    border-bottom: 2px solid var(--neon-purple);
-    padding-bottom: 10px;
-}
-
-/* Títulos de Provincia */
-.provincia-title {
-    color: var(--neon-blue);
-    margin-top: 40px;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-left: 4px solid var(--neon-blue);
-    padding-left: 15px;
-}
-
-/* Tarjetas Generales */
-.level-card {
-    background: var(--glass);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 15px;
-    border-radius: 12px;
-    padding: 20px;
+/* Navbar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(5px);
-    transition: 0.3s;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass);
 }
 
-.level-card:hover {
-    transform: translateX(10px);
-    background: rgba(255, 255, 255, 0.1);
-}
+.nav-logo { font-family: 'Orbitron'; font-weight: bold; font-size: 1.2rem; }
+.version { color: var(--accent); font-size: 0.7rem; margin-left: 10px; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: white; transition: 0.3s; font-size: 0.9rem; }
+.nav-links a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
 
-.card-content {
+/* Hero Section */
+.hero {
+    height: 60vh;
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, var(--bg)), url('https://wallpaperaccess.com/full/3565573.png');
+    background-size: cover;
+    background-position: center;
 }
 
-.info-box h4 {
-    margin: 0;
-    font-size: 1.4rem;
-    font-family: 'Orbitron', sans-serif;
+.hero h1 { font-family: 'Orbitron'; font-size: 4rem; margin: 0; }
+.hero-subtitle { font-size: 1.5rem; opacity: 0.8; }
+
+/* Contenedor de Listas */
+#list-container { max-width: 1000px; margin: 50px auto; padding: 20px; }
+
+.neon-title { 
+    text-align: center; font-family: 'Orbitron'; color: var(--accent); 
+    border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 50px;
 }
 
-.info-box p {
-    margin: 5px 0 0;
-    color: #ccc;
-}
-
-/* --- EL REY: TARJETA DORADA (TOP 1) --- */
-.gold-card {
-    border: 2px solid var(--gold);
-    background: linear-gradient(90deg, rgba(255, 215, 0, 0.05), transparent);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
-    transform: scale(1.02);
-}
-
-.gold-card .rank-box {
-    font-size: 2rem;
-}
-
-.gold-card h4 {
-    color: var(--gold);
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-/* Botones */
-.btn-neon {
-    text-decoration: none;
-    color: var(--neon-blue);
-    border: 1px solid var(--neon-blue);
-    padding: 10px 20px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.8rem;
+/* Tarjetas de Niveles */
+.level-card {
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     transition: 0.3s;
-    text-transform: uppercase;
 }
 
-.btn-neon:hover {
-    background: var(--neon-blue);
-    color: #000;
-    box-shadow: 0 0 20px var(--neon-blue);
-}
+.level-card:hover { background: rgba(255,255,255,0.1); transform: scale(1.01); }
 
-.gold-card .btn-neon {
-    color: var(--gold);
-    border-color: var(--gold);
-}
+.gold-card { border: 1px solid #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); }
 
-.gold-card .btn-neon:hover {
-    background: var(--gold);
-    color: #000;
-    box-shadow: 0 0 20px var(--gold);
+/* Creator Section */
+.creator-section { padding: 50px; display: flex; justify-content: center; }
+.creator-card {
+    background: var(--glass);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border: 1px solid var(--glass);
+}
+.creator-img { width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent); }
+.role { color: var(--accent); font-weight: bold; }
+
+.btn-neon {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
