@@ -3,18 +3,11 @@ window.onload = function() {
 
     const data = [
         {
-            comunidad: "Zaragoza",
+            comunidad: "Aragón",
             provincias: [
                 {
-                    nombre: "Huesca",
-                    habitantes: 52.469,
-                    records: [
-                        { name: "Call Me Maybe", player: "Xenoncito", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=X3RyySRwo_I&t=11s" },
-                    ]
-                },
-                {
-                    nombre: "Huesca",
-                    habitantes: 52469,
+                    nombre: "Zaragoza",
+                    habitantes: 673010,
                     records: [
                         { name: "Call Me Maybe", player: "Xenoncito", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=X3RyySRwo_I&t=11s" }
                     ]
@@ -26,24 +19,28 @@ window.onload = function() {
             provincias: [
                 {
                     nombre: "Santa Cruz De Tenerife",
-                    habitantes: 211.436,
+                    habitantes: 211436,
                     records: [
                         { name: "Gravity", player: "1rr3v3rs1bl3", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=f0wPjcV4mek" }
                     ]
                 }
             ]
-        }
-    ];
-    {
+        },
+        {
             comunidad: "Castilla La Mancha",
             provincias: [
                 {
                     nombre: "Toledo",
-                    habitantes: 88.365,
+                    habitantes: 83365,
                     records: [
                         { name: "Blade Of Justice", player: "AzaxxGD", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=naWcVb1VqlA&t=320s" }
+                    ]
+                }
+            ]
+        }
+    ]; // <--- AQUÍ SE CIERRAN LOS DATOS
+
     const container = document.getElementById('list-container');
-    
     if (!container) return;
     container.innerHTML = "";
 
@@ -64,13 +61,12 @@ window.onload = function() {
             prov.records.forEach((record, index) => {
                 const card = document.createElement('div');
                 card.className = index === 0 ? 'level-card gold-card' : 'level-card';
-                
                 card.innerHTML = `
                     <div class="card-content">
                         <div class="rank-box">${index === 0 ? '🏆' : '#' + (index + 1)}</div>
                         <div class="info-box">
                             <h4>${record.name}</h4>
-                            <p>${record.player} - <span style="color:var(--neon-blue)">${record.percentage}</span></p>
+                            <p>${record.player} - <span style="color:#00f3ff">${record.percentage}</span></p>
                         </div>
                     </div>
                     <a href="${record.videoUrl}" target="_blank" class="btn-neon">Ver Prueba</a>
@@ -79,5 +75,4 @@ window.onload = function() {
             });
         });
     });
-    console.log("¡Hecho!");
-}; // <--- ESTA LLAVE ES LA QUE FALTABA
+};
