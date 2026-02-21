@@ -1,5 +1,6 @@
-// Esperar a que la página cargue para evitar errores
 window.onload = function() {
+    console.log("Cargando niveles...");
+
     const data = [
         {
             comunidad: "Aragón",
@@ -37,20 +38,14 @@ window.onload = function() {
 
     const container = document.getElementById('list-container');
     
-    // Si el contenedor no existe, mandamos un error a la consola para saber qué pasa
-    if (!container) {
-        console.error("No se encontró el contenedor 'list-container'. Revisa tu index.html");
-        return;
-    }
-
-    // Limpiar el contenedor por si acaso
+    if (!container) return;
     container.innerHTML = "";
 
     data.forEach(comu => {
-        const comuSection = document.createElement('div');
-        comuSection.className = 'comunidad-section';
-        comuSection.innerHTML = `<h2 class="neon-title">${comu.comunidad.toUpperCase()}</h2>`;
-        container.appendChild(comuSection);
+        const comuTitle = document.createElement('h2');
+        comuTitle.className = 'neon-title';
+        comuTitle.innerText = comu.comunidad.toUpperCase();
+        container.appendChild(comuTitle);
 
         comu.provincias.sort((a, b) => b.habitantes - a.habitantes);
 
@@ -62,16 +57,14 @@ window.onload = function() {
 
             prov.records.forEach((record, index) => {
                 const card = document.createElement('div');
-                let cardClass = index === 0 ? 'level-card gold-card' : 'level-card';
-                let rankIcon = index === 0 ? '🏆' : `#${index + 1}`;
-
-                card.className = cardClass;
+                card.className = index === 0 ? 'level-card gold-card' : 'level-card';
+                
                 card.innerHTML = `
                     <div class="card-content">
-                        <div class="rank-box">${rankIcon}</div>
+                        <div class="rank-box">${index === 0 ? '🏆' : '#' + (index + 1)}</div>
                         <div class="info-box">
                             <h4>${record.name}</h4>
-                            <p>${record.player} - <span class="percent">${record.percentage}</span></p>
+                            <p>${record.player} - <span style="color:var(--neon-blue)">${record.percentage}</span></p>
                         </div>
                     </div>
                     <a href="${record.videoUrl}" target="_blank" class="btn-neon">Ver Prueba</a>
@@ -80,6 +73,5 @@ window.onload = function() {
             });
         });
     });
-    
-    console.log("¡Niveles cargados correctamente!");
-};
+    console.log("¡Hecho!");
+}; // <--- ESTA LLAVE ES LA QUE FALTABA
