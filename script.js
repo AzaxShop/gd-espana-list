@@ -3,13 +3,13 @@ window.onload = function() {
 
     const data = [
         {
-            comunidad: "Toledo",
+            comunidad: "Zaragoza",
             provincias: [
                 {
-                    nombre: "Toledo",
-                    habitantes: 88.356,
+                    nombre: "Huesca",
+                    habitantes: 52.469,
                     records: [
-                        { name: "Blade Of Justice", player: "AzaxxGD", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=naWcVb1VqlA&t=320s" },
+                        { name: "Call Me Maybe", player: "Xenoncito", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=X3RyySRwo_I&t=11s" },
                     ]
                 },
                 {
@@ -22,11 +22,11 @@ window.onload = function() {
             ]
         },
         {
-            comunidad: "Santa Cruz De Tenerife",
+            comunidad: "Canarias",
             provincias: [
                 {
-                    nombre: "Madrid",
-                    habitantes: 3305408,
+                    nombre: "Santa Cruz De Tenerife",
+                    habitantes: 211.436,
                     records: [
                         { name: "Gravity", player: "1rr3v3rs1bl3", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=f0wPjcV4mek" }
                     ]
@@ -34,7 +34,14 @@ window.onload = function() {
             ]
         }
     ];
-
+    {
+            comunidad: "Castilla La Mancha",
+            provincias: [
+                {
+                    nombre: "Toledo",
+                    habitantes: 88.365,
+                    records: [
+                        { name: "Blade Of Justice", player: "AzaxxGD", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=naWcVb1VqlA&t=320s" }
     const container = document.getElementById('list-container');
     
     if (!container) return;
