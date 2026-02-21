@@ -1,85 +1,87 @@
 :root {
     --bg-color: #05070a;
-    --card-bg: rgba(15, 20, 30, 0.8); /* Más oscuro y sólido */
+    --card-bg: rgba(15, 20, 30, 0.9);
     --accent-color: #00fbff;
+    --gold-color: #ffcc00;
     --text-color: #ffffff;
-    --font-main: 'Inter', sans-serif;
 }
 
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                url('https://wallpaperaccess.com/full/3565573.png'); /* Fondo de GD */
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                url('https://wallpaperaccess.com/full/3565573.png');
     background-size: cover;
     background-attachment: fixed;
     color: var(--text-color);
-    font-family: var(--font-main);
+    font-family: 'Inter', sans-serif;
     margin: 0;
-}
-
-header {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
 }
 
-h1 {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin: 0;
-}
-
-.highlight {
+/* Títulos de Comunidades */
+.comunidad-titulo {
+    font-size: 2.5rem;
     color: var(--accent-color);
-    text-shadow: 0 0 15px var(--accent-color);
+    margin-top: 60px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding: 0 20px 10px;
+    text-shadow: 0 0 15px rgba(0, 251, 255, 0.4);
+}
+
+/* Títulos de Provincias */
+.provincia-titulo {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 #list-container {
     width: 90%;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    display: grid;
-    gap: 15px;
     padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .level-card {
     background: var(--card-bg);
-    border-left: 5px solid var(--accent-color); /* Franja de color al lado */
-    border-radius: 10px;
-    padding: 25px;
+    border-radius: 8px;
+    padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-left: 4px solid #333;
+    transition: 0.3s;
 }
 
-.level-card:hover {
-    transform: scale(1.02);
-    background: rgba(30, 40, 50, 0.9);
+/* EL DORADO PARA EL MEJOR DE CADA PROVINCIA */
+.top-one {
+    border-left: 6px solid var(--gold-color) !important;
+    background: linear-gradient(90deg, rgba(255, 204, 0, 0.1), var(--card-bg));
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
 }
 
-.level-info h3 {
-    margin: 0;
-    font-size: 1.8rem;
-    color: var(--accent-color);
+.top-one .level-info h3 {
+    color: var(--gold-color);
 }
+
+.level-info h3 { margin: 0; font-size: 1.3rem; text-align: left; }
+.level-info p { margin: 5px 0 0; opacity: 0.7; text-align: left; }
 
 .btn-video {
-    background: transparent;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-    padding: 12px 25px;
-    border-radius: 5px;
+    color: var(--text-color);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 15px;
     text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
+    border-radius: 5px;
+    font-size: 0.8rem;
     transition: 0.3s;
 }
 
 .btn-video:hover {
-    background: var(--accent-color);
+    background: var(--text-color);
     color: #000;
-    box-shadow: 0 0 20px var(--accent-color);
 }
