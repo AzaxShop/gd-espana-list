@@ -37,7 +37,20 @@ window.onload = function() {
                     ]
                 }
             ]
-        }
+        },
+        {
+            comunidad: "Galicia",
+            provincias: [
+                {
+                    nombre: "Santiago De Compostela",
+                    habitantes: 100.965,
+                    records: [
+                        { name: "Gravity", player: "R1m2", percentage: "100%", videoUrl: "https://www.tiktok.com/@rue1.m2/video/7578150874694962435?is_from_webapp=1&sender_device=pc&web_id=7556717541113349654" }
+                    ]
+                }
+            ]
+        },
+        
     ]; // <--- AQUÍ SE CIERRAN LOS DATOS
 
     const container = document.getElementById('list-container');
