@@ -7,7 +7,7 @@ window.onload = function() {
             provincias: [
                 {
                     nombre: "Huesca",
-                    habitantes: 673010,
+                    habitantes: 55.850,
                     records: [
                         { name: "Call Me Maybe", player: "Xenoncito", percentage: "100%", videoUrl: "https://www.youtube.com/watch?v=X3RyySRwo_I&t=11s" }
                     ]
