@@ -14,9 +14,33 @@ body {
 
 /* Navbar original */
 .navbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 50px; background: rgba(0,0,0,0.8);
-    border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 100;
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, enlaces a la derecha */
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid #00f3ff; /* Línea neón azul */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none; /* Quita los puntos de la lista */
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00f3ff;
+    text-shadow: 0 0 10px #00f3ff;
 }
 
 /* Título con Glitch */
