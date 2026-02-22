@@ -29,7 +29,7 @@ window.onload = function() {
         return videoId ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` : 'https://via.placeholder.com/120x68';
     }
 
-    data.forEach(comu => {
+data.forEach(comu => {
         const comuTitle = document.createElement('h2');
         comuTitle.className = 'neon-title';
         comuTitle.innerText = comu.comunidad.toUpperCase();
@@ -45,20 +45,23 @@ window.onload = function() {
                 const card = document.createElement('div');
                 card.className = index === 0 ? 'level-card gold-card' : 'level-card';
                 
+                // Obtenemos la imagen de YouTube
+                const thumb = getThumbnail(record.videoUrl);
+
                 card.innerHTML = `
-                    <div class="card-left">
-                        <div class="info">
-                            <h4>${index === 0 ? '🏆 ' : ''}${record.name}</h4>
-                            <p>${record.player} - ${record.percentage}</p>
-                        </div>
+                    <div class="card-background" style="background-image: url('${thumb}')"></div>
+                    <div class="card-overlay"></div>
+                    
+                    <div class="card-content-left">
+                        <h4 class="level-name">${index === 0 ? '🏆 ' : '#' + (index + 1)} ${record.name}</h4>
+                        <p class="player-info">Por: <strong>${record.player}</strong> — ${record.percentage}</p>
                     </div>
-                    <div class="card-right">
-                        <img src="${getThumbnail(record.videoUrl)}" alt="Miniatura" class="video-thumb">
-                        <a href="${record.videoUrl}" target="_blank" class="btn-neon">Ver Prueba</a>
+
+                    <div class="card-content-right">
+                        <a href="${record.videoUrl}" target="_blank" class="btn-neon">VER PRUEBA</a>
                     </div>
                 `;
                 container.appendChild(card);
             });
         });
     });
-};
