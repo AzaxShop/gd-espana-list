@@ -17,32 +17,31 @@ window.onload = function() {
     const container = document.getElementById('list-container');
     if (!container) return;
 
-    data.forEach((comu, comuIndex) => {
-        const title = document.createElement('h2');
-        title.style.color = "#00f3ff";
-        title.style.marginTop = "50px";
-        title.innerText = comu.comunidad.toUpperCase();
-        container.appendChild(title);
+    data.forEach(comu => {
+        const h2 = document.createElement('h2');
+        h2.className = 'comunidad-title';
+        h2.innerText = comu.comunidad.toUpperCase();
+        container.appendChild(h2);
 
-        comu.records.forEach((rec, recIndex) => {
+        comu.records.forEach(rec => {
             const videoId = rec.videoUrl.split('v=')[1]?.split('&')[0];
             const thumb = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
             
             const card = document.createElement('div');
             card.className = 'level-card';
-            // Retraso de animación escalonado
-            card.style.animationDelay = `${(comuIndex + recIndex) * 0.1}s`;
-            
             card.innerHTML = `
                 <div class="card-bg" style="background-image: url('${thumb}')"></div>
                 <div class="card-overlay"></div>
                 <div class="card-info">
                     <h4>${rec.name}</h4>
-                    <p>Por: <strong>${rec.player}</strong></p>
+                    <p>Por: ${rec.player}</p>
                 </div>
-                <a href="${rec.videoUrl}" target="_blank" class="btn-neon">VER PRUEBA</a>
+                <a href="${rec.videoUrl}" target="_blank" class="btn-neon">Ver Prueba</a>
             `;
             container.appendChild(card);
+            
+            // Forzar la transición después de un momento
+            setTimeout(() => card.classList.add('visible'), 100);
         });
     });
-}; // <-- Llave de cierre corregida
+};
