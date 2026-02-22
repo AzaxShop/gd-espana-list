@@ -1,65 +1,77 @@
 :root {
     --bg: #050505;
     --accent: #00f3ff;
-    --gold: #ffd700;
     --glass: rgba(255, 255, 255, 0.05);
 }
 
 body {
-    background: var(--bg) url('https://i.imgur.com/Y7S7z7k.png'); /* Fondo estrellas */
+    background-color: var(--bg);
+    /* Fondo de estrellas estable */
+    background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+    background-size: 550px 550px, 350px 350px;
     color: white;
     font-family: 'Rajdhani', sans-serif;
     margin: 0;
-    overflow-x: hidden;
 }
 
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 15px 50px; background: rgba(0,0,0,0.9);
-    border-bottom: 1px solid var(--accent); position: sticky; top: 0; z-index: 100;
+    border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 100;
 }
-
-.hero { height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; }
 
 /* Efecto Glitch */
 .glitch {
-    font-size: 5rem; font-family: 'Orbitron'; position: relative;
-    color: white; text-shadow: 2px 2px var(--accent);
+    font-size: 4rem; font-family: 'Orbitron'; position: relative;
+    text-shadow: 2px 2px #ff00c1; animation: anim-glitch 2s infinite;
 }
 
-#list-container { max-width: 900px; margin: auto; padding: 20px; }
+@keyframes anim-glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
 
-/* TARJETAS TIPO BANNER (DEMON LIST) */
+#list-container { max-width: 900px; margin: 40px auto; padding: 20px; }
+
+/* Tarjetas estilo Demon List con Banner */
 .level-card {
-    position: relative; height: 110px; margin-bottom: 15px;
-    border-radius: 10px; overflow: hidden; display: flex;
-    align-items: center; justify-content: space-between; padding: 0 25px;
-    border: 1px solid rgba(255,255,255,0.1);
+    position: relative; height: 130px; margin-bottom: 20px;
+    border-radius: 12px; overflow: hidden; display: flex;
+    align-items: center; justify-content: space-between; padding: 0 30px;
+    border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
 }
 
 .card-bg {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover; background-position: center; opacity: 0.4; z-index: 1;
+    background-size: cover; background-position: center; opacity: 0.5; z-index: 1;
 }
 
 .card-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(90deg, black 30%, transparent); z-index: 2;
+    background: linear-gradient(90deg, black 40%, transparent); z-index: 2;
 }
 
 .card-info { position: relative; z-index: 3; }
-.card-info h4 { font-size: 1.8rem; margin: 0; font-family: 'Orbitron'; }
+.card-info h4 { font-family: 'Orbitron'; font-size: 1.8rem; margin: 0; }
 
 .btn-neon {
-    position: relative; z-index: 3; padding: 10px 20px;
-    border: 1px solid var(--accent); color: var(--accent);
+    position: relative; z-index: 3; padding: 10px 25px;
+    border: 2px solid var(--accent); color: var(--accent);
     text-decoration: none; font-weight: bold; border-radius: 5px;
+    transition: 0.3s;
 }
 
-/* SECCIÓN CREADOR */
-.creator-section { display: flex; justify-content: center; padding: 50px 0; }
+.btn-neon:hover { background: var(--accent); color: black; box-shadow: 0 0 20px var(--accent); }
+
+/* Creator Section */
+.creator-section { display: flex; justify-content: center; padding: 60px 0; }
 .creator-card {
-    background: var(--glass); padding: 20px; border-radius: 15px;
-    display: flex; align-items: center; gap: 20px; border: 1px solid var(--accent);
+    background: rgba(255,255,255,0.03); border: 1px solid var(--accent);
+    padding: 25px; border-radius: 20px; display: flex; align-items: center; gap: 20px;
 }
-.creator-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+.creator-img { width: 110px; height: 110px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
