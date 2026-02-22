@@ -107,3 +107,22 @@ body {
     background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid var(--accent);
 }
 .creator-img { width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent); }
+
+/* Esto es lo que te falta para centrarlo todo */
+.hero {
+    display: flex;
+    justify-content: center; /* Centra horizontal de izquierda a derecha */
+    align-items: center;     /* Centra vertical de arriba a abajo */
+    text-align: center;      /* Centra las letras */
+    padding: 100px 20px;     /* Da aire arriba y abajo para que no esté pegado al menú */
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.glitch {
+    display: block;
+    margin: 0 auto;
+}
